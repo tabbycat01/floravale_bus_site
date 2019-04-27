@@ -264,3 +264,6 @@ def FloravaleTimingView(request):
 
     context = {'ans': ans}
     return render(request, 'floravale_bus/timing.html', context)
+
+class TimetableView(TemplateView):
+    template_name = 'floravale_bus/timetable.html'
