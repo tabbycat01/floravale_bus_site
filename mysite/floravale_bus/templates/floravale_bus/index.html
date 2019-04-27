@@ -1,0 +1,16 @@
+{% extends 'floravale_bus/base.html' %}
+{% block body_block %}
+
+<div class='jumbotron'>
+
+<h1>Hi, where are you heading?</h1>
+
+<br>
+<br>
+<a class='btn btn-primary' href="{% url 'to_BoonLay' %}">I'm travelling towards Boon Lay!</a>
+<br>
+<br>
+<a class='btn btn-primary' href="{% url 'to_Floravale' %}">Coming back home to Floravale!</a>
+
+</div>
+{% endblock %}
