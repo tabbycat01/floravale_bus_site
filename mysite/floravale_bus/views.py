@@ -6,6 +6,10 @@ import calendar
 from datetime import date, datetime
 from workalendar.asia import Singapore
 
+from .forms import FeedbackForm
+from django.views.generic.edit import FormView
+from django.urls import reverse_lazy
+from django.shortcuts import redirect
 # Create your views here.
 
 class IndexView(TemplateView):
@@ -267,3 +271,15 @@ def FloravaleTimingView(request):
 
 class TimetableView(TemplateView):
     template_name = 'floravale_bus/timetable.html'
+
+class FeedbackFormView(FormView):
+    template_name = 'floravale_bus/feedback_form.html'
+    form_class = FeedbackForm
+    success_url = reverse_lazy('thanks')
+
+    def form_valid(self, form):
+        form.save()
+        return redirect(self.success_url )
+
+class thanksView(TemplateView):
+    template_name = 'floravale_bus/thanks.html'

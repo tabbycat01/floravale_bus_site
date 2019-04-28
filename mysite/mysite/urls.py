@@ -24,4 +24,6 @@ urlpatterns = [
     path('to_BoonLay/', views.BoonLayTimingView, name='to_BoonLay'),
     path('to_Floravale/', views.FloravaleTimingView, name='to_Floravale'),
     path('timetable/', views.TimetableView.as_view(), name='timetable'),
+    path('feedback_form/', views.FeedbackFormView.as_view(), name='feedback_form'),
+    path('thanks/', views.thanksView.as_view(), name='thanks'),
 ]
